@@ -21,7 +21,7 @@ async def create_task(db: AsyncSession, task: TaskCreate):
     )
     db.add(new_task)
     await db.commit()
-    await db.refresh(new_task)  # Обновляем объект, чтобы получить ID и даты
+    await db.refresh(new_task)
     return new_task
 
 
